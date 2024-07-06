@@ -23,8 +23,17 @@ describe('TopNavComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render app name', () => {
+  it('should render app name on mobile', () => {
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain("QuickMart");
+    component.isMobilePortrait = false;
+    fixture.detectChanges();
+    expect(compiled.querySelector('.title')?.textContent).toContain("QuickMart");
+  });
+
+  it('should not render app name if device is not mobile', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    component.isMobilePortrait = true;
+    fixture.detectChanges();
+    expect(compiled.querySelector('.title')?.textContent).toBeUndefined();
   })
 });

@@ -1,0 +1,40 @@
+.card {
+    height: 300px;
+    border: 1px solid var(--primary);
+    position: relative;
+}
+
+.chip {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--accent);
+    color: var(--primary);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.img {
+    height: 60%;
+    object-fit: cover;
+}
+
+.title {
+    height: 100%;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 5px 10px;
+}
+
+.time {
+    font-size: 0.7rem;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 1rem;
+}

@@ -1,18 +1,28 @@
-<div class="main-wrapper">
+<mat-toolbar class="main-wrapper">
+
+  @if (!isMobilePortrait) {
     <h1 class="title">QuickMart</h1>
+  }
 
-    <mat-form-field class="remove-input-bottom-margin search-bar" appearance="outline">
-        <input matInput placeholder="Search">
-        <button type="button" mat-icon-button matIconSuffix>
-            <mat-icon>search</mat-icon>
-        </button>
-      </mat-form-field>
+  <mat-form-field class="remove-input-bottom-margin search-bar" appearance="outline">
+    <input matInput placeholder="Search">
+    <button type="button" mat-icon-button matIconSuffix>
+      <mat-icon>search</mat-icon>
+    </button>
+  </mat-form-field>
 
-      <div class="btn-wrapper">
-        <button type="button" mat-icon-button>
-            <mat-icon>tune</mat-icon>
-        </button>
+  <div class="btn-wrapper">
+    
+    <button type="button" mat-icon-button color="primary">
+      <mat-icon>tune</mat-icon>
+    </button>
 
-        <button type="button" mat-raised-button color="primary">Prijavi se</button>
-      </div>
-</div>
+    @if (isMobilePortrait) {
+      <button type="button" mat-icon-button color="primary">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+    } @else {
+      <button type="button" mat-raised-button color="primary">Prijavi se</button>
+    }
+  </div>
+</mat-toolbar>
